@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
 
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
             it.action = action.name
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 log("Starting the service in >=26 Mode")
+                it.putExtra("A", Random.nextInt())
                 startForegroundService(it)
                 return
             }
